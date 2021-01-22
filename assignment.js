@@ -1,109 +1,107 @@
-function kilometerToMeter(x){
+//Here x is the input value in kilometer
+function kilometerToMeter(x) {
 
-    var result;
+    var meter;
 
-   if(x<0)
-   return console.log("Wrong Input");
-    else{
-    result=x*1000;
-       
-    return result;
+    if (x < 0)
+        return console.log("Wrong Input");
+    else {
+        meter = x * 1000;
+
+        return meter;
     }
 
 }
 
-var x=10;
+//Here x,y,z are quantity value of watch,mobile,laptop 
+function budgetCalculator(x, y, z) {
 
-console.log(kilometerToMeter(x));
+    var watchPrice, mobilePrice, laptopPrice, totalPrice;
 
-function budgetCalculator(x,y,z){
+    if (x < 0 || y < 0 || z < 0)
+        return console.log("wrong input");
+    else {
+        watchPrice = x * 50;
+        mobilePrice = y * 100;
+        laptopPrice = z * 500;
 
-        var watchPrice,mobilePrice,laptopPrice,totalPrice;
 
-        if(x<0||y<0||z<0)
-            return console.log("wrong input");
-        else
-        {
-        watchPrice=x*50;
-        mobilePrice=y*100;
-        laptopPrice=z*500;
-        
-
-        totalPrice=watchPrice+mobilePrice+laptopPrice;
+        totalPrice = watchPrice + mobilePrice + laptopPrice;
 
         return totalPrice;
-        }
-    
-}
-
-var total=budgetCalculator(4,5,6);
-
-console.log(total);
-
-
-function hotelCost(x){
-
-        if(x<0)
-            return console.log("Days cannot be negative!Please insert positive value");
-        else if(x<=10){
-
-            var total =x*100;
-            return total;
-        }
-        else if(x<=20){
-
-            var firstTenDays=10*100;
-            var remainingDays=x-10;
-            var total=(remainingDays*80)+ firstTenDays;
-            return total;
-
-        }
-        else {
-
-           var firstTenDays=10*100;
-            var secondDays=10*80;
-            var remainingDays=x-20;
-            total=firstTenDays+secondDays+(x-20)*50;
-            return total;
-
-
-        }
-
-
+    }
 
 }
 
-var days=26;
+//Here x is the amount of days
+function hotelCost(x) {
 
-var cost=hotelCost(days);
+    if (x < 0)
+        return console.log("Days cannot be negative!Please insert positive value");
+    else if (x <= 10) {
 
-console.log(cost);
+        var totalCost = x * 100;
+        return totalCost;
+    }
+    else if (x <= 20) {
 
+        var firstTenDays = 10 * 100;
+        var remainingDays = x - 10;
+        var totalCost = (remainingDays * 80) + firstTenDays;
+        return totalCost;
 
-function megaFriend(array){
+    }
+    else {
 
-    var highest=array[0];
-    var i;
-
-    for(i=0;i<array.length;i++){
-
-        if(array[i].length>highest.length){
-
-            highest=array[i];
-
-        }
+        var firstTenDays = 10 * 100;
+        var secondTenDays = 10 * 80;
+        var remainingDays = x - 20;
+        totalCost = firstTenDays + secondTenDays + (x - 20) * 50;
+        return totalCost;
 
 
     }
-            return highest;
+
+
 
 }
 
+function megaFriend(array) {
 
-var highest;
+    var largestName = array[0];
+    var i;
 
-var array=["fahim","rakib","ishraq","kalamanik"];
+    if (array.length != 0) {
+        for (i = 0; i < array.length; i++) {
 
-highest=megaFriend(array);
+            if (array[i].length > largestName.length) {
 
-console.log(highest);
+                largestName = array[i];
+
+            }
+
+
+        }
+        return largestName;
+    }
+
+    else
+        return console.log("Sorry!Your array is empty.");
+
+}
+
+//Below are for testing output
+// var x = 10;
+// console.log(kilometerToMeter(x));
+
+// var total = budgetCalculator(4, 5, 6);
+// console.log(total);
+
+// var days = 18;
+// var cost = hotelCost(days);
+// console.log(cost);
+
+// var highest;
+// var array = ["Arif","Fahim","habibullah"];
+// highest = megaFriend(array);
+// console.log(highest);
