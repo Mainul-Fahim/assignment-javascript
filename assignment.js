@@ -36,7 +36,7 @@ function budgetCalculator(x,y,z){
     
 }
 
-var total=budgetCalculator(4,3,1);
+var total=budgetCalculator(4,5,6);
 
 console.log(total);
 
@@ -78,3 +78,32 @@ var days=26;
 var cost=hotelCost(days);
 
 console.log(cost);
+
+
+function megaFriend(array){
+
+    var highest=array[0];
+    var i;
+
+    for(i=0;i<array.length;i++){
+
+        if(array[i].length>highest.length){
+
+            highest=array[i];
+
+        }
+
+
+    }
+            return highest;
+
+}
+
+
+var highest;
+
+var array=["fahim","rakib","ishraq","kalamanik"];
+
+highest=megaFriend(array);
+
+console.log(highest);
