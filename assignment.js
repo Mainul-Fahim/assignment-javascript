@@ -1,3 +1,5 @@
+//https://github.com/Mainul-Fahim/assignment-javascript
+
 //Here x is the input value in kilometer
 function kilometerToMeter(x) {
 
@@ -25,7 +27,7 @@ function budgetCalculator(x, y, z) {
         mobilePrice = y * 100;
         laptopPrice = z * 500;
 
-
+        
         totalPrice = watchPrice + mobilePrice + laptopPrice;
 
         return totalPrice;
