@@ -1,109 +1,43 @@
-//https://github.com/Mainul-Fahim/assignment-javascript
+// Find the single different char between two strings. E.g.
+// None input -> TypeError
+// 'ab', 'aab' -> 'a'
+// 'aab', 'ab' -> 'a'
+// 'abcd', 'abcde' -> 'e'
+// 'aaabbcdd', 'abdbacade' -> 'e'
 
-//Here x is the input value in kilometer
-function kilometerToMeter(x) {
-
-    var meter;
-
-    if (x < 0)
-        return console.log("Wrong Input");
-    else {
-        meter = x * 1000;
-
-        return meter;
-    }
-
-}
-
-//Here x,y,z are quantity value of watch,mobile,laptop 
-function budgetCalculator(x, y, z) {
-
-    var watchPrice, mobilePrice, laptopPrice, totalPrice;
-
-    if (x < 0 || y < 0 || z < 0)
-        return console.log("wrong input");
-    else {
-        watchPrice = x * 50;
-        mobilePrice = y * 100;
-        laptopPrice = z * 500;
-
-        
-        totalPrice = watchPrice + mobilePrice + laptopPrice;
-
-        return totalPrice;
-    }
-
-}
-
-//Here x is the amount of days
-function hotelCost(x) {
-
-    if (x < 0)
-        return console.log("Days cannot be negative!Please insert positive value");
-    else if (x <= 10) {
-
-        var totalCost = x * 100;
-        return totalCost;
-    }
-    else if (x <= 20) {
-
-        var firstTenDays = 10 * 100;
-        var remainingDays = x - 10;
-        var totalCost = (remainingDays * 80) + firstTenDays;
-        return totalCost;
-
-    }
-    else {
-
-        var firstTenDays = 10 * 100;
-        var secondTenDays = 10 * 80;
-        var remainingDays = x - 20;
-        totalCost = firstTenDays + secondTenDays + (x - 20) * 50;
-        return totalCost;
-
-
-    }
-
-
-
-}
-
-function megaFriend(array) {
-
-    var largestName = array[0];
-    var i;
-
-    if (array.length != 0) {
-        for (i = 0; i < array.length; i++) {
-
-            if (array[i].length > largestName.length) {
-
-                largestName = array[i];
-
-            }
-
-
+function diffChar(str1,str2){
+    let count1,count2 = 0;
+    let resStr1 = [];
+    let resStr2=[];
+    if(str1==='' || str2=='')
+        console.log("No input found");
+    for(let i=0;i<str1.length;i++){
+        if(str1[i]===str1[i+1]){
+            count1++;
+            resStr1.push(str1[i]);
+            
         }
-        return largestName;
     }
+    for(let i=0;i<str2.length;i++){
+        if(str2[i]===str2[i+1]){
+            count2++;
+            resStr2.push(str2[i]);
+        }
 
-    else
-        return console.log("Sorry!Your array is empty.");
+    }
+    if(count1>count2){
+        console.log(resStr1);
+
+    }
+    else {
+        console.log(resStr2);
+    }
+    // console.log(resStr1);
+    // console.log(resStr2);
 
 }
+const ar1= 'ab';
+const ar2 = 'aab';
 
-//Below are for testing output
-// var x = 10;
-// console.log(kilometerToMeter(x));
+const result = diffChar(ar1,ar2);
 
-// var total = budgetCalculator(4, 5, 6);
-// console.log(total);
-
-// var days = 18;
-// var cost = hotelCost(days);
-// console.log(cost);
-
-// var highest;
-// var array = ["Arif","Fahim","habibullah"];
-// highest = megaFriend(array);
-// console.log(highest);
